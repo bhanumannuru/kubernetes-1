@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp
+  name: webapp
 spec:
   replicas: 3
   strategy:
@@ -11,14 +11,14 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels:
-      app: nodeapp
+      app: webapp
   template:
     metadata:
       labels:
-        app: nodeapp
+        app: webapp
     spec:
       containers:
-      - image: kammana/nodeapp:v2
-        name: nodeapp
+      - image: bhanudevops106/project-webapp
+        name: webapp
         ports:
         - containerPort: 8080
