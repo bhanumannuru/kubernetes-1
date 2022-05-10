@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webapp
 spec:
-  replicas: 3
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -20,5 +20,6 @@ spec:
       containers:
       - image: bhanudevops106/project-webapp
         name: webapp
+        iamgePullPolicy: Always
         ports:
         - containerPort: 8080
